@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom background animations and styles */
+@keyframes bg-pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.95; }
+}
+
+.animate-bg-pulse {
+  animation: bg-pulse 8s ease-in-out infinite;
+}
+

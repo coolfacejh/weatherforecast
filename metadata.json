@@ -1,0 +1,6 @@
+{
+  "name": "Today's Weather",
+  "description": "A beautiful and interactive full-stack weather application providing real-time weather forecasts, hourly charts, and AI-powered clothing/activity suggestions in Korean.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
