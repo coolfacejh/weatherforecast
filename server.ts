@@ -1,6 +1,5 @@
 import express from "express";
 import path from "path";
-import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
 import dotenv from "dotenv";
 
@@ -212,7 +211,13 @@ Please output the response exactly as a JSON object matching this schema:
 
 // Main Server Setup
 async function startServer() {
+  if (process.env.VERCEL === "1") {
+    // Under Vercel, serverless function is loaded, do not call app.listen()
+    return;
+  }
+
   if (process.env.NODE_ENV !== "production") {
+    const { createServer: createViteServer } = await import("vite");
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
@@ -232,3 +237,5 @@ async function startServer() {
 }
 
 startServer();
+
+export default app;
